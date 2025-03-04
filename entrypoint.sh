@@ -1,7 +1,7 @@
 #!/bin/sh -1
 
-result=$(($$1 + $2))
+result=$(($1 + $2))
 
-echo:"result"
+echo:"result=$result" >> $GITHUB_OUTPUT
 
-echo: "hello"
+echo: "output file" > containerOutputFile.txt
