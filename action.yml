@@ -1,0 +1,15 @@
+name: containerAction
+descripotion: calculator to test a containeraction
+inpute:
+  number1:
+    required: true
+    default: 0
+  number2:
+    required: true
+    default: 0
+    outputs:
+      result:
+        description: 'output of the sume of 2 numbers'
+        runs:
+        using: 'docker'
+        
