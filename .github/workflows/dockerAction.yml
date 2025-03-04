@@ -5,7 +5,7 @@ on:
 
 jobs:
   test-docker-action:
-    name: job to test our docker action
+    name: Job to test our Docker action
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,7 +15,12 @@ jobs:
         with:
           number1: 6
           number2: 3
-      - run: echo $(( steps.dockerAction.outputs.result }}
+      - run: echo ${{ steps.dockerAction.outputs.result }}
       - run: cat $GITHUB_WORKSPACE/containerOutputFile.txt
-      - run: cat $$(( github.workspace }}/containerOutputFile.txt
+      - run: cat ${{ github.workspace }}/containerOutputFile.txt
+
+
+
+
+    
     
