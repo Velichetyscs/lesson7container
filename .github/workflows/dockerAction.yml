@@ -1,0 +1,21 @@
+name: dockerAction
+
+on:
+  push:
+
+jobs:
+  test-docker-action:
+    name: job to test our docker action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checout@v4
+      - run: chmod +x entrypoint.sh
+      - uses: ./
+        id: dockerAction
+        with:
+          number1: 6
+          number2: 8
+      - run: echo $(( steps.dockerAction.outputs.result }}
+      - run: cat $GITHUB_WORKSPACE/ContainerOutputFile.txt
+      - run: cat $$(( github.workspace }}/ContainerOutputFile.txt
+    
