@@ -1,7 +1,14 @@
-#!/bin/sh -1
+#!/bin/bash
 
-result=$(($1 + $2))
+# Read inputs
+number1=${1:-0}
+number2=${2:-0}
 
-echo: "result=$result" >> $GITHUB_OUTPUT
+# Perform some operation (e.g., addition)
+result=$((number1 + number2))
 
-echo: "output file" > containerOutputFile.txt
+# Output the result
+echo "::set-output name=result::$result"
+
+# Optionally write to a file
+echo "Result: $result" > containerOutputFile.txt
