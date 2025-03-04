@@ -7,9 +7,13 @@ inpute:
   number2:
     required: true
     default: 0
-    outputs:
+  outputs:
       result:
         description: 'output of the sume of 2 numbers'
-        runs:
-        using: 'docker'
+  runs:
+     using: 'docker'
+     image: 'Dockerfile'
+     args:
+       - $(( inputs.number1 }}
+       - $(( inputs.number2 }}
         
