@@ -1,5 +1,13 @@
-FROM alpine:3.10
+FROM ubuntu:latest
 
-COPY entrypoint.sh /entrypoint.sh
+# Set the working directory
+WORKDIR /app
 
-ENTRYPOINT ["/entrypoint.sh"]
+# Copy the entrypoint script into the image
+COPY entrypoint.sh .
+
+# Make the entrypoint script executable
+RUN chmod +x entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["./entrypoint.sh"]
